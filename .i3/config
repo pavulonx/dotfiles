@@ -145,7 +145,7 @@ bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
 
 #change current wallpaper
-bindsym $mod+c exec --no-startup-id /home/rozen/.scripts/change-wallpaper.sh
+bindsym $mod+c exec --no-startup-id ~/.scripts/change-wallpaper.sh
 
 
 
@@ -317,10 +317,10 @@ bindsym $mod+9 exec --no-startup-id blurlock
 #exec --no-startup-id /usr/bin/adjust_i3statusconf
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
-exec --no-startup-id /home/rozen/.scripts/wallpaper.sh
+exec --no-startup-id ~/.scripts/wallpaper.sh
 
 #exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-#exec_always --no-startup-id feh --bg-scale /home/rozen/Pictures/Wallpapers/002unsplash-2017-01-01.jpg
+#exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/002unsplash-2017-01-01.jpg
 #exec_always --no-startup-id feh --recursive --randomize --bg-scale ~/.wallpaper/*  
 ##^move this to separate file fo instance .fehbg
 #instead of nitrogen which is broken
