@@ -21,10 +21,7 @@ bindsym $mod+n border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-#font xft:Noto Sans 10
-
-font pango:Product Sans 9
-
+font xft:Noto Sans 10
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -32,14 +29,12 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec terminal
 
-#start a terminal in a floatinng mode
-#bindsym $mod+Shift+Return exec terminal; floating toggle
-
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id dmenu_recency
+# bindsym $mod+d exec --no-startup-id dmenu_recency
+bindsym $mod+d exec --no-startup-id  "j4-dmenu-desktop --display-binary --usage-log='/home/rozen/.j4-dmenu-desktop.log' --dmenu='dmenu -i '"
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -61,8 +56,7 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 # bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Start Applications
-
-
+bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+F2 exec palemoon
 bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
@@ -83,7 +77,7 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+odiaeresis focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -95,7 +89,7 @@ bindsym $mod+Right focus right
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+odiaeresis move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -144,15 +138,11 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
 
-#change current wallpaper
-bindsym $mod+c exec --no-startup-id ~/.scripts/change-wallpaper.sh
-
-
-
 # Workspace names
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
+
   set $ws1 "1: "
   set $ws2 "2: "
   set $ws3 "3: "
@@ -215,18 +205,13 @@ assign [class="chromium"] $ws1
 assign [class="Chromium"] $ws1
 assign [class="Spotify"] $ws8
 assign [class="spotify"] $ws8
+for_window [class="Spotify"] move to workspace $ws8
 assign [class="Evolution"] $ws7
 assign [class="jetbrains-idea"] $ws3
 assign [class="jetbrains-clion"] $ws3
 assign [class="jetbrains-pycharm"] $ws3
 assign [class="jetbrains-clion"] $ws3
 assign [class="jetbrains-studio"] $ws3
-#assign [class="geany"] $ws3
-#assign [class="Geany"] $ws3
-# assign [class="Thunderbird"] $ws1
-# assign [class="Pale moon"] $ws2
-# assign [class="Pcmanfm"] $ws3
-# assign [class="Skype"] $ws5
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -238,12 +223,13 @@ for_window [class="GParted"] floating enable border normal
 for_window [title="i3_help"] floating enable sticky enable border normal
 for_window [class="Lightdm-gtk-greeter-settings"] floating enable
 for_window [class="Lxappearance"] floating enable sticky enable border normal
+for_window [class="Manjaro-hello"] floating enable
 for_window [class="Manjaro Settings Manager"] floating enable border normal
-for_window [class="Manjaro Welcome"] floating enable
 for_window [title="MuseScore: Play Panel"] floating enable
 for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="Oblogout"] fullscreen enable
 for_window [class="octopi"] floating enable
+for_window [title="About Pale Moon"] floating enable
 for_window [class="Pamac-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="qt5ct"] floating enable sticky enable border normal
@@ -296,7 +282,7 @@ mode "resize" {
         bindsym j resize shrink width 5 px or 5 ppt
         bindsym k resize grow height 5 px or 5 ppt
         bindsym l resize shrink height 5 px or 5 ppt
-        bindsym semicolon resize grow width 5 px or 5 ppt
+        bindsym odiaeresis resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -313,27 +299,13 @@ mode "resize" {
 bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
-## adjustment of i3bar battery reading (only run at the very first login):
-#exec --no-startup-id /usr/bin/adjust_i3statusconf
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-
-exec --no-startup-id ~/.scripts/wallpaper.sh
-
-#exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-#exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/002unsplash-2017-01-01.jpg
-#exec_always --no-startup-id feh --recursive --randomize --bg-scale ~/.wallpaper/*  
-##^move this to separate file fo instance .fehbg
-#instead of nitrogen which is broken
-
+exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
-#exec --no-startup-id pamac-tray
+exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
-# exec --no-startup-id blueman
-# exec_always --no-startup-id sbxkb
-#exec --no-startup-id start_conky_maia
-exec --no-startup-id conky
-# exec --no-startup-id start_conky_green
+exec --no-startup-id start_conky_maia
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id fix_xcursor
 
@@ -348,17 +320,10 @@ bar {
 
 	bindsym button4 nop
 	bindsym button5 nop
-	#font xft:Noto Sans 10.5
-	font pango:Product Sans 9,FontAwesome 8.5
-#    	font pango: Sans, FontAwesome 10
-	#strip_workspace_numbers yes
+	font xft:Noto Sans 9
+	strip_workspace_numbers no
 
 	colors {
-#	background $transparent
-#		background #2B2C2B
-#               statusline #F9FAF9
-#		separator  #454947
-
       		background $base01
       		statusline $base05
       		separator $base03
@@ -368,11 +333,7 @@ bar {
       		inactive_workspace $base01 $base01 $base03
       		urgent_workspace   $base01 $base01 $base08
 
-#		focused_workspace  #F9FAF9 #16A085 #2B2C2B
-#		active_workspace   #595B5B #353836 #FDF6E3
-#		inactive_workspace #595B5B #353836 #EEE8D5
-#		urgent_workspace   #16A085 #FDF6E3 #E5201D
-	}
+    }
 }
 
 # hide/unhide i3status bar
