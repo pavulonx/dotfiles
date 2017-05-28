@@ -1,2 +1,2 @@
 # dotfiles
-My computer configuration files.
+Configuration files for i3-wm and much more.
