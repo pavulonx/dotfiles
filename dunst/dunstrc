@@ -1,6 +1,6 @@
 [global]
-    #font = Cantarell 10
-    font = Product Sans 9
+    # font = Cantarell 10
+    font = Noto Sans 10
     
     # Allow a small subset of html markup:
     #   <b>bold</b>
@@ -143,18 +143,16 @@
     dmenu = /usr/bin/dmenu -p dunst:
     
     # Browser for opening urls in context menu.
-    browser = chromium
+    browser = palemoon
 
     # Align icons left/right/off
     icon_position = left
 
     # Paths to default icons.
-    	#icon_folders = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
-    icon_folders = /usr/share/icons/Ultra-Flat-Orange/status/:/usr/share/icons/Ultra-Flat-Orange/devices/
+    icon_folders = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
 
 [frame]
-    #width = 1
-    width = 0
+    width = 0S
     color = "#16A085"
 
 [shortcuts]

@@ -5,7 +5,9 @@ ZSH=/usr/share/oh-my-zsh/
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnosterquetran"
+ZSH_THEME="agnosterzak"
+#ZSH_THEME="random"
+
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -44,6 +46,7 @@ ZSH_THEME="agnosterquetran"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=~/.oh-my-zsh/custom/
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -87,6 +90,9 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 alias zshconfig="gedit ~/.zshrc"
 alias anaconda="/opt/anaconda/bin/python3.6"
 alias chwall="~/.scripts/change-wallpaper.sh"
+alias ssha="eval $(ssh-agent)"
+alias sshagh='eval $(ssh-agent) && ssh-add ~/.ssh/id_rsa_github_jr'
+alias gitunmodlastcommit='git ls-files --full-name | grep -v "$(git diff --name-only HEAD)"'
 
 ZSH_CACHE_DIR=$HOME/.oh-my-zsh-cache
 if [[ ! -d $ZSH_CACHE_DIR ]]; then

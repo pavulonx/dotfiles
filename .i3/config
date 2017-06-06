@@ -34,7 +34,7 @@ bindsym $mod+Shift+q kill
 
 # start program launcher
 # bindsym $mod+d exec --no-startup-id dmenu_recency
-bindsym $mod+d exec --no-startup-id  "j4-dmenu-desktop --display-binary --usage-log='/home/rozen/.j4-dmenu-desktop.log' --dmenu='dmenu -i '"
+bindsym $mod+d exec --no-startup-id  j4-dmenu-desktop --display-binary --usage-log='/home/rozen/.j4-dmenu-desktop.log' --dmenu='dmenu -i -nb "#222d32" -sb "#00BCD4"'
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -308,33 +308,36 @@ exec --no-startup-id clipit
 exec --no-startup-id start_conky_maia
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id fix_xcursor
+#exec_always --no-startup-id killall polybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
-bar {
-	status_command i3status
-	position top
+#bar {
+	# status_command i3status
+#	status_command polybar top
+#	position top
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
 #	tray_output primary
 #	tray_output eDP1
 
-	bindsym button4 nop
-	bindsym button5 nop
-	font xft:Noto Sans 9
-	strip_workspace_numbers no
+#	bindsym button4 nop
+#	bindsym button5 nop
+#	font xft:Noto Sans 9
+#	strip_workspace_numbers no
 
-	colors {
-      		background $base01
-      		statusline $base05
-      		separator $base03
+#	colors {
+#      		background $base01
+#      		statusline $base05
+#      		separator $base03
 #                                  border  backgr. text
-     		focused_workspace  $base01 $base01 $base07
-      		active_workspace   $base01 $base02 $base03
-      		inactive_workspace $base01 $base01 $base03
-      		urgent_workspace   $base01 $base01 $base08
-
-    }
-}
+#     		focused_workspace  $base01 $base01 $base07
+#      		active_workspace   $base01 $base02 $base03
+#      		inactive_workspace $base01 $base01 $base03
+#      		urgent_workspace   $base01 $base01 $base08
+#
+#    }
+#}
 
 # hide/unhide i3status bar
 bindsym $mod+m bar mode toggle

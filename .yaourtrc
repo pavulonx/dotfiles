@@ -1,0 +1,4 @@
+TMPDIR="/home/rozen/.yaourt-tmp"
+NOCONFIRM=1
+BUILD_NOCONFIRM=1
+EDITFILES=0

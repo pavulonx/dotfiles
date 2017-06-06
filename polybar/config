@@ -1,0 +1,277 @@
+
+
+;=====================================================
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;=====================================================
+
+[colors]
+transparent = #00000000
+#background = #2f343f
+background = #222d32
+foreground = #ebdbb2
+black = #7c6f64
+dgrey = #928374
+dred = #cc241d
+red = #fb4934
+dgreen = #98971a
+green = #b8bb26
+dyellow = #d79921
+yellow = #fabd2f
+dblue = #458588
+blue = #83a598
+dmagenta = #b16286
+magenta = #d3869b
+dcyan = #689d6a
+cyan = #8ec07c
+lgrey = #a89984
+white = #ebdbb2
+
+tblack = #852f343f
+tred = #80fb4934
+tgreen = #80b8bb26
+tyellow = #80fabd2f
+tblue = #8083a598
+tmagenta = #80d3869b
+tcyan = #808ec07c
+twhite = #80ebdbb2
+tgrey = #80a89984
+
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+[bar/top]
+width = 100%
+height = 22
+offset-x = 0
+offset-y = 0
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+
+
+locale = en_EN.UTF-8
+
+3background = ${colors.tblack}
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = Noto Sans:size=9:fontformat=truetype
+font-1 = FontAwesome:size=10;0
+
+modules-left = i3 xwindow
+modules-center = 
+modules-right = spotify mediaplayer backlight volumeintel volumeasus temperature memory updates battery date
+
+tray-position = right
+tray-padding = 2
+
+; Background color for the tray container
+; By default the tray container will use the bar
+; background color.
+; Note: 32 bit alpha blending is not supported.
+; tray-background = ${root.background}
+; tray-background = ${colors.tblack}
+tray-background = ${colors.background}
+tray-transparent = false
+
+; If true, the bar will not shift its
+; contents when the tray changes
+tray-detached = false
+
+; Tray icon max size
+;tray-maxsize = 16
+
+
+
+; Tray offset defined as pixel value (e.g. 35) or percentage (e.g. 50%)
+; tray-offset-x = 0
+; tray-offset-y = 0
+
+; Pad the sides of each tray icon
+; tray-padding = 0
+
+; Scale factor for tray clients
+; tray-scale = 1.0
+
+
+underline-size = 3
+
+spacing = 1
+padding-left = 0
+padding-right = 2
+module-margin-left = 2
+module-margin-right = 2
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/i3]
+type = internal/i3
+
+; This will split the workspace name on ':'
+; Default: false
+strip-wsnumbers = true
+
+; Sort the workspaces by index instead of the default
+; sorting that groups the workspaces by output
+; Default: false
+index-sort = true
+
+;ws-icon-0 = 1
+;ws-icon-1 = 2
+;ws-icon-2 = 3
+;ws-icon-3 = 4
+;ws-icon-4 = 5
+
+format = <label-state> <label-mode>
+
+label-mode-foreground = ${colors.background}
+label-mode-background = ${colors.dyellow}
+label-mode-padding = 1
+
+label-focused-foreground = ${colors.magenta}
+label-focused-background = ${colors.tmagenta}
+label-focused-underline = ${colors.dmagenta}
+label-focused-padding = 1
+
+label-unfocused-padding = 1
+
+label-urgent-background = ${colors.tred}
+label-urgent-underline = ${colors.dred}
+label-urgent-padding = 1
+
+label-visible-background = ${colors.tgreen}
+label-visible-underline = ${colors.dgreen}
+label-visible-padding = 1
+
+[module/updates]
+type = custom/script
+exec = $HOME/.bin/updates.sh
+interval = 120
+format-background = ${colors.red}
+format-foreground = ${colors.background}
+format-padding = 2
+click-left = urxvt -e sudo pacman -Syu
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+format = <label>
+format-background = ${colors.tyellow}
+format-underline = ${colors.dyellow}
+format-padding = 2
+label =   %percentage%
+
+[module/spotify]
+type = custom/script
+exec = BLOCK_INSTANCE=spotify $HOME/.bin/mediaplayer
+label =   %output:0:30:...%
+format-foreground = #aacf00
+format-background = #80aacf00
+format-underline = #aacf00
+format-padding = 2
+interval = 5
+exec-if = pgrep -x spotify
+
+[module/mediaplayer]
+type = custom/script
+exec = BLOCK_INSTANCE=DeaDBeeF $HOME/.bin/mediaplayer
+label =   %output:0:30:...%
+
+format-underline = ${colors.dblue}
+format-padding = 2
+interval = 5
+format-background = ${colors.tblue}
+exec-if = pgrep deadbeef
+
+[module/volumeintel]
+type = internal/volume
+format-volume = <ramp-volume> <label-volume>
+master-mixer = Master
+label-muted =  muted
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+format-volume-underline = ${colors.dgreen}
+format-volume-padding = 2
+mapping = true
+format-volume-background = ${colors.tgreen}
+
+[module/volumeasus]
+type = internal/volume
+format-volume = <label-volume>
+master-mixer = PCM
+label-muted =  muted
+
+label-volume =  %percentage%
+format-volume-underline = ${colors.dgreen}
+format-volume-padding = 2
+mapping = true
+format-volume-background = ${colors.tgreen}
+
+[module/temperature]
+type = custom/script
+exec = $HOME/.bin/temperature.sh
+interval = 10
+label =   %output%
+format-underline = ${colors.dred}
+format-padding = 2
+format-background = ${colors.tred}
+
+[module/date]
+type = internal/date
+interval = 2
+
+date = "  %d.%m.%Y"
+date-alt = "  %A, %d. %B"
+
+time = "%H:%M"
+time-alt = "%H:%M:%S"
+
+format-underline = ${colors.dcyan} 
+format-padding = 2
+label = "%{A3:gsimplecal:}%date% | %time%%{A}"
+
+format-background = ${colors.tcyan}
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 99
+
+format-charging = <animation-charging> <label-charging>
+
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage% (%time%)
+
+format-full-prefix = "  "
+format-underline = ${colors.dblue}
+format-padding = 2
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+format-background = ${colors.tblue}
+
+; vim:ft=dosini
