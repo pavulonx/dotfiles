@@ -31,15 +31,25 @@ cyan = #8ec07c
 lgrey = #a89984
 white = #ebdbb2
 
-tblack = #852f343f
-tred = #80fb4934
-tgreen = #80b8bb26
-tyellow = #80fabd2f
-tblue = #8083a598
-tmagenta = #80d3869b
-tcyan = #808ec07c
-twhite = #80ebdbb2
-tgrey = #80a89984
+;tblack = #852f343f
+;tred = #80fb4934
+;tgreen = #80b8bb26
+;tyellow = #80fabd2f
+;tblue = #8083a598
+;tmagenta = #80d3869b
+;tcyan = #808ec07c
+;twhite = #80ebdbb2
+;tgrey = #80a89984
+
+tblack = #222d32
+tred = #222d32
+tgreen = #222d32
+tyellow = #222d32
+tblue = #222d32
+tmagenta = #222d32
+tcyan = #222d32
+twhite = #222d32
+tgrey = #222d32
 
 
 [global/wm]
@@ -157,8 +167,11 @@ label-visible-padding = 1
 type = custom/script
 exec = $HOME/.bin/updates.sh
 interval = 120
-format-background = ${colors.red}
-format-foreground = ${colors.background}
+format-background = ${colors.background}
+;format-foreground = ${colors.red}
+;format-foreground = ${colors.tred}
+format-underline = ${colors.red}
+
 format-padding = 2
 click-left = urxvt -e sudo pacman -Syu
 
