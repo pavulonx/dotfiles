@@ -186,14 +186,14 @@ label =   %percentage%
 
 [module/spotify]
 type = custom/script
-exec = BLOCK_INSTANCE=spotify $HOME/.bin/mediaplayer
+exec = BLOCK_INSTANCE=spotify $HOME/.bin/mediaplayer | xargs echo
 label =   %output:0:30:...%
-format-foreground = #aacf00
-format-background = #80aacf00
+;format-foreground = #aacf00
+;format-background = #80aacf00
 format-underline = #aacf00
 format-padding = 2
 interval = 5
-exec-if = pgrep -x spotify
+;exec-if = pgrep -x spotify
 
 [module/mediaplayer]
 type = custom/script
