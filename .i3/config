@@ -305,8 +305,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
-exec --no-startup-id start_conky_maia
-exec --no-startup-id xautolock -time 10 -locker blurlock
+; exec --no-startup-id start_conky_maia
+exec --no-startup-id xautolock -time 5 -locker blurlock
 exec_always --no-startup-id fix_xcursor
 #exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
