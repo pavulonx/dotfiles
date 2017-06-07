@@ -91,7 +91,7 @@ alias zshconfig="gedit ~/.zshrc"
 alias anaconda="/opt/anaconda/bin/python3.6"
 alias chwall="~/.scripts/change-wallpaper.sh"
 alias ssha="eval $(ssh-agent)"
-alias sshagh='eval $(ssh-agent) && ssh-add ~/.ssh/id_rsa_github_jr'
+alias sshagh='eval ~/.ssh/sshagh.sh'
 alias gitunmodlastcommit='git ls-files --full-name | grep -v "$(git diff --name-only HEAD)"'
 
 ZSH_CACHE_DIR=$HOME/.oh-my-zsh-cache
