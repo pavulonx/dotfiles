@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if [ "$(playerctl status)" = "Playing" ]; then
   title=`exec playerctl metadata xesam:title`
