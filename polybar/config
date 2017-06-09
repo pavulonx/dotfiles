@@ -78,7 +78,7 @@ font-1 = FontAwesome:size=10;0
 
 modules-left = i3 xwindow
 modules-center = 
-modules-right = spotify mediaplayer wlan backlight volumeintel volumeasus temperature cpu memory updates battery date
+modules-right = wlan backlight volumeintel volumeasus temperature cpu memory updates battery date
 
 tray-position = right
 tray-padding = 2
@@ -122,7 +122,7 @@ module-margin-right = 2
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:100:...%
+label = %title:0:70:...%
 
 [module/i3]
 type = internal/i3
@@ -174,7 +174,7 @@ label =   %percentage%
 [module/spotify]
 type = custom/script
 exec = BLOCK_INSTANCE=spotify $HOME/.bin/mediaplayer.sh | xargs echo
-label =   %output:0:30:...%
+label =   %output:0:25:...%
 ;format-foreground = #aacf00
 ;format-background = #80aacf00
 format-underline = #aacf00
