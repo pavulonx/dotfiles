@@ -23,6 +23,7 @@ cp -v ~/.Xresources ./.Xresources
 cp -v ~/.extend.Xresources ./.extend.Xresources
 
 cp -v ~/.config/mimeapps.list ./mimeapps.list
+cp -v ~/.Xmodmap ./.Xmodmap
 
 # cp -v ~/.mpd/mpd.conf ./mpd/mpd.conf
 # cp -v ~/.ncmpcpp/config ./ncmpcpp/config

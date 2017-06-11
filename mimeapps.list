@@ -19,6 +19,7 @@ application/pdf=evince.desktop
 application/x-bittorrent=transmission-gtk.desktop
 x-scheme-handler/about=chromium.desktop
 x-scheme-handler/unknown=chromium.desktop
+inode/directory=Thunar.desktop
 
 [Added Associations]
 x-scheme-handler/http=chromium.desktop;
@@ -42,7 +43,7 @@ application/x-bittorrent=transmission-gtk.desktop;
 text/x-tex=org.gnome.latexila.desktop;
 text/x-log=mousepad.desktop;
 text/x-java=org.gnome.gedit.desktop;mousepad.desktop;nvim.desktop;
-application/zip=xarchiver.desktop;
+application/zip=xarchiver.desktop;org.gnome.FileRoller.desktop;
 application/x-shellscript=mousepad.desktop;
 application/xml=org.gnome.gedit.desktop;mousepad.desktop;
 text/css=org.gnome.gedit.desktop;
