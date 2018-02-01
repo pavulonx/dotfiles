@@ -55,12 +55,17 @@ ZSH_CUSTOM=~/.oh-my-zsh/custom/
 plugins=(git)
 
 # User configuration
+# POWERLEVEL9K_MODE='awesome-fontconfig'
 
 export LANG=en_US.UTF-8
 #export LANG=en_US.utf8
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
+export WORKSPACE=${HOME}/Programming
+export APPS=${WORKSPACE}/apps
 
+#CC
+export MAVEN_OPTS="-Xmx2048m"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -91,8 +96,16 @@ alias zshconfig="gedit ~/.zshrc"
 alias anaconda="/opt/anaconda/bin/python3.6"
 alias chwall="~/.scripts/change-wallpaper.sh"
 alias ssha="eval $(ssh-agent)"
+alias cdapp="cd ${APPS}"
+alias cd..="cd .."
+alias ..="cd .."
 alias sshagh=' ~/.ssh/sshagh.sh'
 alias gitunmodlastcommit='git ls-files --full-name | grep -v "$(git diff --name-only HEAD)"'
+alias cdcc='cd /home/rozen/Workspace/crazycall/crazy-calls'
+alias cdpwr='cd /home/rozen/MEGAsync/PWR/term5'
+alias i3conf="gedit ~/.i3/config"
+alias ccat='pygmentize -g'
+
 
 ZSH_CACHE_DIR=$HOME/.oh-my-zsh-cache
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
@@ -100,3 +113,5 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
 fi
 
 source $ZSH/oh-my-zsh.sh
+
+eval $(thefuck --alias)

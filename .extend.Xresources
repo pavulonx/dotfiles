@@ -47,12 +47,8 @@ URxvt.termName: rxvt-unicode-256color
 
 
 !FONT
-!urxvt*font: xft:Source\ Code\ Pro\ for\ Powerline:size=9:antialias=true
-urxvt*font: xft:SourceCodePro:size=10.5:antialias=true
-!urxvt*font: xft:Monoisome:size=9:antialias=true
-!URxvt*font: xft:"Source Code Pro":size=16
-!urxvt*font: xft:Terminus:size=12,xft:Inconsolata\ for\ Powerline:size=12
-!URxvt*font:  xft:inconsolata:size=10:antialias=true,xft:DejaVu Sans:size=10:antialias=true,xft:Sauce Code Powerline:antialias=true:hinting=true:size=9
+!font sie must be higher
+urxvt*font: xft:SourceCodePro:size=10.5:antialias=true,xft:Font\ Awesome:antialias=true:pixelsize=12
 
 
 
@@ -80,6 +76,10 @@ URxvt*cursorBlink:                    true
 URxvt*background:                     black
 URxvt*foreground:                     grey
 URxvt*saveLines:                      5000
+
+URxvt*scrollTtyOutput:                false
+URxvt*scrollTtyKeypress:              true
+URxvt*scrollWithBuffer:               true
 
 ! for 'fake' transparency (without Compton) uncomment the following three lines
 ! URxvt*inheritPixmap:                  true

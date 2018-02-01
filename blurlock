@@ -5,6 +5,11 @@
 import -window root /tmp/screenshot.png
 
 # blur it
+#convert /tmp/screenshot.png -resize 50%  /tmp/screenshot1.png
+# convert /tmp/screenshot.png -blur 2x8 /tmp/screenshotblur.png
+# Then put back to 200% to get back to orginal size
+# convert /tmp/screenshot1.png -resize 200% /tmp/screenshot.png
+
 convert /tmp/screenshot.png -blur 0x5 /tmp/screenshotblur.png
 rm /tmp/screenshot.png
 

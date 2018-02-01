@@ -205,12 +205,18 @@ assign [class="Chromium"] $ws1
 assign [class="Spotify"] $ws8
 assign [class="spotify"] $ws8
 for_window [class="Spotify"] move to workspace $ws8
+assign [class="messenger for desktop"] $ws7
+for_window [class="messenger for desktop"] move to workspace $ws7
+for_window [class="Messenger for Desktop"] move to workspace $ws7
 assign [class="Evolution"] $ws7
 assign [class="jetbrains-idea"] $ws3
 assign [class="jetbrains-clion"] $ws3
 assign [class="jetbrains-pycharm"] $ws3
 assign [class="jetbrains-clion"] $ws3
 assign [class="jetbrains-studio"] $ws3
+assign [class="jetbrains-datagrip"] $ws3
+assign [class="jetbrains-webstorm"] $ws3
+assign [class="jetbrains-rider"] $ws3
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -238,7 +244,7 @@ for_window [class="(?i)System-config-printer.py"] floating enable border normal
 for_window [class="Skype"] floating enable border normal
 for_window [class="Thus"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
-for_window [class="(?i)virtualbox"] floating enable border normal
+#for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 
 # switch to workspace with urgent window automatically
