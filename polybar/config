@@ -316,7 +316,7 @@ format-connected = <label-connected>
 format-connected-underline = ${colors.white}
 format-disconnected-underline = ${colors.lgrey}
 
-label-connected = %essid:0:10:...%
+label-connected =%downspeed:9%  %essid:0:10:...%
 label-disconnected = 
 label-disconnected-foreground = ${colors.lgrey}
 

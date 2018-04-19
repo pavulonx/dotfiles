@@ -32,6 +32,12 @@ bindsym $mod+Shift+q kill
 # start program launcher
 bindsym $mod+d exec --no-startup-id  j4-dmenu-desktop --display-binary --usage-log='/home/rozen/.j4-dmenu-desktop.log' --dmenu='dmenu -i -nb "#222d32" -sb "#00BCD4"'
 
+# rofi window
+bindsym $mod+x exec --no-startup-id  rofi -show window
+
+# rofi program launcher
+bindsym $mod+c exec --no-startup-id  rofi -show drun
+
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
 

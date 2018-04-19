@@ -5,9 +5,9 @@ ZSH=/usr/share/oh-my-zsh/
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnosterzak"
-#ZSH_THEME="random"
-
+# ZSH_THEME="agnosterzak"
+# ZSH_THEME="random"
+# powerlevel at the EOF
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -61,8 +61,6 @@ export LANG=en_US.UTF-8
 #export LANG=en_US.utf8
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
-export WORKSPACE=${HOME}/Programming
-export APPS=${WORKSPACE}/apps
 
 #CC
 export MAVEN_OPTS="-Xmx2048m"
@@ -71,41 +69,28 @@ export MAVEN_OPTS="-Xmx2048m"
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"#
-#
+# Common aliases
 alias zshconfig="gedit ~/.zshrc"
 alias anaconda="/opt/anaconda/bin/python3.6"
 alias chwall="~/.scripts/change-wallpaper.sh"
 alias ssha="eval $(ssh-agent)"
-alias cdapp="cd ${APPS}"
 alias cd..="cd .."
 alias ..="cd .."
-alias sshagh=' ~/.ssh/sshagh.sh'
 alias gitunmodlastcommit='git ls-files --full-name | grep -v "$(git diff --name-only HEAD)"'
-alias cdcc='cd /home/rozen/Workspace/crazycall/crazy-calls'
-alias cdpwr='cd /home/rozen/MEGAsync/PWR/term5'
 alias i3conf="gedit ~/.i3/config"
 alias ccat='pygmentize -g'
 
+source ${HOME}/.exports.sh
+source ${HOME}/.aliases.sh
 
 ZSH_CACHE_DIR=$HOME/.oh-my-zsh-cache
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
@@ -115,3 +100,12 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 eval $(thefuck --alias)
+
+#ssh
+eval $(ssh-agent) >> /dev/null;
+ssh-add $SSH_KEY_PATH 2> /dev/null
+
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+

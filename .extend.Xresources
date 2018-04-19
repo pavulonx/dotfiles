@@ -48,7 +48,7 @@ URxvt.termName: rxvt-unicode-256color
 
 !FONT
 !font sie must be higher
-urxvt*font: xft:SourceCodePro:size=10.5:antialias=true,xft:Font\ Awesome:antialias=true:pixelsize=12
+urxvt*font: xft:SourceCodePro:size=11:antialias=true,xft:Font\ Awesome:antialias=true:pixelsize=15
 
 
 
