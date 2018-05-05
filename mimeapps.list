@@ -73,3 +73,6 @@ video/webm=vlc.desktop;
 video/x-msvideo=vlc.desktop;
 image/x-xcf=org.gnome.gThumb.desktop;
 text/csv=libreoffice-calc.desktop;
+application/vnd.oasis.opendocument.spreadsheet=libreoffice-calc.desktop;
+application/vnd.android.package-archive=xarchiver.desktop;
+application/octet-stream=open-fuse-iso.desktop;

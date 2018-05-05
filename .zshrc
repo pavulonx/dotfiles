@@ -72,7 +72,7 @@ export MAVEN_OPTS="-Xmx2048m"
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export EDITOR='nvim'
 fi
 
 # Compilation flags
