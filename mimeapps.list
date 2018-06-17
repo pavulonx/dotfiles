@@ -76,3 +76,5 @@ text/csv=libreoffice-calc.desktop;
 application/vnd.oasis.opendocument.spreadsheet=libreoffice-calc.desktop;
 application/vnd.android.package-archive=xarchiver.desktop;
 application/octet-stream=open-fuse-iso.desktop;
+application/gzip=org.gnome.FileRoller.desktop;xarchiver.desktop;
+text/x-readme=org.gnome.gedit.desktop;

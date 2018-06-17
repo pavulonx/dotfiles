@@ -86,7 +86,7 @@ alias ssha="eval $(ssh-agent)"
 alias cd..="cd .."
 alias ..="cd .."
 alias gitunmodlastcommit='git ls-files --full-name | grep -v "$(git diff --name-only HEAD)"'
-alias i3conf="gedit ~/.i3/config"
+alias i3conf="vim ~/.i3/config"
 alias ccat='pygmentize -g'
 
 source ${HOME}/.exports.sh

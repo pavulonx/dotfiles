@@ -24,19 +24,14 @@ font xft:Noto Sans 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminal
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id  j4-dmenu-desktop --display-binary --usage-log='/home/rozen/.j4-dmenu-desktop.log' --dmenu='dmenu -i -nb "#222d32" -sb "#00BCD4"'
-
-# rofi window
-bindsym $mod+x exec --no-startup-id  rofi -show window
-
-# rofi program launcher
-bindsym $mod+c exec --no-startup-id  rofi -show drun
+# bindsym $mod+d exec --no-startup-id  j4-dmenu-desktop --display-binary --usage-log='/home/rozen/.j4-dmenu-desktop.log' --dmenu='dmenu -i -nb "#222d32" -sb "#00BCD4"'
+bindsym $mod+d exec --no-startup-id  $HOME/.rofi.sh 
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -64,7 +59,7 @@ bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart du
 bindsym $mod+Menu --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Menu --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
-bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+bindsym $mod+Shift+Ctrl+x --release exec --no-startup-id xkill
 
 # focus_follows_mouse no
 
@@ -150,14 +145,14 @@ bindsym $mod+Ctrl+Left workspace prev
 
 # Color definition
   set $base00 #101218
-  set $base01 #1f222d
-  set $base02 #252936
-  set $base03 #7780a1
+  set $base01 #263238
+  set $base02 #37474f
+  set $base03 #cfd8dc
   set $base04 #C0C5CE
   set $base05 #d1d4e0
   set $base06 #C9CCDB
   set $base07 #ffffff
-  set $base08 #ee829f
+  set $base08 #e91e63
   set $base09 #f99170
   set $base0A #ffefcc
   set $base0B #a5ffe1
@@ -214,6 +209,8 @@ for_window [class="Spotify"] move to workspace $ws8
 assign [class="messenger for desktop"] $ws7
 for_window [class="messenger for desktop"] move to workspace $ws7
 for_window [class="Messenger for Desktop"] move to workspace $ws7
+assign [class="franz"] $ws7
+for_window [class="franz"] move to workspace $ws7
 assign [class="Evolution"] $ws7
 assign [class="jetbrains-idea"] $ws3
 assign [class="jetbrains-clion"] $ws3
@@ -318,6 +315,7 @@ exec --no-startup-id xfce4-power-manager
 exec --no-startup-id clipit
 exec --no-startup-id xautolock -time 5 -locker blurlock
 exec --no-startup-id xset dpms 600 1200 2400
+exec --no-startup-id redshift
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
