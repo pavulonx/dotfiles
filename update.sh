@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 cp -v ~/.config/dunst/dunstrc ./dunst/dunstrc
 cp -v ~/.config/compton.conf ./compton/compton.conf
@@ -24,6 +24,8 @@ cp -v ~/.extend.Xresources ./.extend.Xresources
 
 cp -v ~/.config/mimeapps.list ./mimeapps.list
 cp -v ~/.Xmodmap ./.Xmodmap
+
+cp -v ~/.rofi.sh ./.rofi.sh
 
 # cp -v ~/.mpd/mpd.conf ./mpd/mpd.conf
 # cp -v ~/.ncmpcpp/config ./ncmpcpp/config
