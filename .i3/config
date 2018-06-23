@@ -304,7 +304,8 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym $mod+9 exec --no-startup-id blurlock
+# bindsym $mod+9 exec --no-startup-id blurlock
+bindsym $mod+9 exec --no-startup-id betterlockscreen -l
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -318,6 +319,7 @@ exec --no-startup-id xset dpms 600 1200 2400
 exec --no-startup-id redshift
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.bin/toggle_monitor.sh
 
 ##
 # bar{} section has been ramoved, using polybar instead
