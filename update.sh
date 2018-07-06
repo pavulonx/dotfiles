@@ -28,6 +28,8 @@ cp -v ~/.Xmodmap ./.Xmodmap
 cp -v ~/.rofi.sh ./.rofi.sh
 cp -v /home/rozen/.bin/toggle_monitor.sh ./.bin/toggle_monitor.sh
 
+cp -v ~/.config/termite/config ./termite/config
+
 # cp -v ~/.mpd/mpd.conf ./mpd/mpd.conf
 # cp -v ~/.ncmpcpp/config ./ncmpcpp/config
 # cp -v ~/.config/cava/config ./cava/config
