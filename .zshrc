@@ -52,7 +52,7 @@ ZSH_CUSTOM=~/.oh-my-zsh/custom/
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git docker docker-compose thefuck archlinux)
 
 # User configuration
 # POWERLEVEL9K_MODE='awesome-fontconfig'
@@ -79,7 +79,7 @@ fi
 # export ARCHFLAGS="-arch x86_64"
 #
 # Common aliases
-alias zshconfig="gedit ~/.zshrc"
+alias zshconfig="vim ~/.zshrc"
 alias anaconda="/opt/anaconda/bin/python3.6"
 alias chwall="~/.scripts/change-wallpaper.sh"
 alias ssha="eval $(ssh-agent)"
@@ -99,13 +99,11 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
-eval $(thefuck --alias)
-
 #ssh
 eval $(ssh-agent) >> /dev/null;
 ssh-add $SSH_KEY_PATH 2> /dev/null
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

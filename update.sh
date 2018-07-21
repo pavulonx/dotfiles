@@ -30,6 +30,10 @@ cp -v /home/rozen/.bin/toggle_monitor.sh ./.bin/toggle_monitor.sh
 
 cp -v ~/.config/termite/config ./termite/config
 
+cp -v ~/.aliases.sh ./.aliases.sh
+cat ~/.exports.sh | cut -d= -f1 > .exports.sh
+# cp -v ~/.exports.sh ./exports.sh
+
 # cp -v ~/.mpd/mpd.conf ./mpd/mpd.conf
 # cp -v ~/.ncmpcpp/config ./ncmpcpp/config
 # cp -v ~/.config/cava/config ./cava/config
