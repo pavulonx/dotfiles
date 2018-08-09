@@ -32,6 +32,11 @@ cp -v ~/.config/termite/config ./termite/config
 
 cp -v ~/.aliases.sh ./.aliases.sh
 cat ~/.exports.sh | cut -d= -f1 > .exports.sh
+
+cp -v /usr/bin/i3exit i3exit
+
+cp -vr ~/.bin .
+
 # cp -v ~/.exports.sh ./exports.sh
 
 # cp -v ~/.mpd/mpd.conf ./mpd/mpd.conf

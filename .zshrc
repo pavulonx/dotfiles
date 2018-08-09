@@ -59,7 +59,7 @@ plugins=(git docker docker-compose thefuck archlinux)
 
 export LANG=en_US.UTF-8
 #export LANG=en_US.utf8
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 #CC

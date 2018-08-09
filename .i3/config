@@ -305,7 +305,8 @@ mode "resize" {
 
 # Lock screen
 # bindsym $mod+9 exec --no-startup-id blurlock
-bindsym $mod+9 exec --no-startup-id betterlockscreen -l
+# bindsym $mod+9 exec --no-startup-id betterlockscreen -l
+bindsym $mod+9 exec --no-startup-id $HOME/.bin/i3-betterlockcreen 
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
