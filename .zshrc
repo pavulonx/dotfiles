@@ -5,8 +5,9 @@ ZSH=/usr/share/oh-my-zsh/
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# ZSH_THEME="agnosterzak"
 # ZSH_THEME="random"
+# ZSH_THEME="agnosterzak"
+ZSH_THEME="agnosterzak_patched"
 # powerlevel at the EOF
 
 # Uncomment the following line to use case-sensitive completion.
@@ -55,7 +56,7 @@ ZSH_CUSTOM=~/.oh-my-zsh/custom/
 plugins=(git docker docker-compose thefuck archlinux)
 
 # User configuration
-# POWERLEVEL9K_MODE='awesome-fontconfig'
+POWERLEVEL9K_MODE='awesome-fontconfig'
 
 export LANG=en_US.UTF-8
 #export LANG=en_US.utf8
@@ -104,6 +105,6 @@ eval $(ssh-agent) >> /dev/null;
 ssh-add $SSH_KEY_PATH 2> /dev/null
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+# source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
