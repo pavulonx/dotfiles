@@ -3,7 +3,7 @@
 
 # define locker
 params=""
-[[ $(whereis xautolock | grep -o ":.*xautolock") ]] && locker="xautolock" && params="-locknow" || locker="i3lock"
+[[ $(ps x | grep xautolock | grep -v "grep") ]] && locker="xautolock" && params="-locknow" || locker="i3lock"
 
 # with openrc use loginctl
 [[ $(cat /proc/1/comm) == "systemd" ]] && logind=systemctl || logind=loginctl
