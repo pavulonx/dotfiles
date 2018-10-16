@@ -55,7 +55,8 @@ bindsym $mod+Shift+F3 exec gksu pcmanfm
 bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'Dunst restart'"
+bindsym $mod+Shift+plus --release exec --no-startup-id "autorandr -c; exec notify-send 'Autorandr change'; true"
 bindsym $mod+Menu --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Menu --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf

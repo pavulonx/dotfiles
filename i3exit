@@ -1,12 +1,17 @@
 #!/bin/sh
 # /usr/bin/i3exit
 
+# define locker
+params=""
+[[ $(whereis xautolock | grep -o ":.*xautolock") ]] && locker="xautolock" && params="-locknow" || locker="i3lock"
+
 # with openrc use loginctl
 [[ $(cat /proc/1/comm) == "systemd" ]] && logind=systemctl || logind=loginctl
 
 case "$1" in
     lock)
-        blurlock
+        $locker $params 
+        # blurlock
         ;;
     logout)
         i3-msg exit
@@ -15,10 +20,10 @@ case "$1" in
         dm-tool switch-to-greeter
         ;;
     suspend)
-        blurlock && $logind suspend
+        $locker $params && $logind suspend
         ;;
     hibernate)
-        blurlock && $logind hibernate
+        $locker $params && $logind hibernate
         ;;
     reboot)
         $logind reboot
