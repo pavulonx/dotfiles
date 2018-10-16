@@ -42,6 +42,8 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     unset f
 fi
 
+xset dpms 600 1200 2400
+
 get_session(){
 	local dbus_args=(--sh-syntax --exit-with-session)
 	case $1 in
@@ -69,7 +71,8 @@ get_session(){
 
 exec $(get_session)
 
-xset s 180 0
+
+
 
 # twm &
 # xclock -geometry 50x50-1+1 &

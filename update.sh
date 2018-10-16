@@ -38,6 +38,7 @@ cp -v /usr/bin/i3exit i3exit
 cp -vr ~/.bin .
 
 cp -v ~/.vimrc ./.vimrc
+
 # cp -v ~/.exports.sh ./exports.sh
 
 # cp -v ~/.mpd/mpd.conf ./mpd/mpd.conf
