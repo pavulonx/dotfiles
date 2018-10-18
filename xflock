@@ -1,0 +1,13 @@
+#!/bin/sh
+# /usr/local/bin/xflock4
+# enabling screenlock by xfce4-power-manger for manjaro-i3 (without xfce4-session)
+
+if [ ! -f "/usr/bin/xflock4" ]; then
+  if [[ $(ps x | grep xautolock | grep -v "grep") ]]; then 
+    xautolock -locknow
+  else 
+    i3lock
+  fi
+else
+  /usr/bin/xflock4
+fi
