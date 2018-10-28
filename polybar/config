@@ -96,7 +96,7 @@ tray-scale = 01.00
 
 modules-left = i3 xwindow
 modules-center = date
-modules-right = music vpncheck wlan backlight volume temperature cpu memory filesystem battery 
+modules-right = music vpn wlan powermenu backlight volume temperature cpu memory filesystem battery ;redshift
 
 underline-size = 1
 
@@ -194,43 +194,22 @@ format-background = ${colors.tred}
 [module/date]
 type = internal/date
 interval = 2
-
 date = "  %d.%m.%Y"
 date-alt = "  %A, %d. %B"
-
 time = "%H:%M"
 time-alt = "%H:%M:%S"
-
 format-underline = ${colors.dcyan} 
 format-padding = 2
 label = "%{A3:gsimplecal:}%date% | %time%%{A}"
-
 format-background = ${colors.tcyan}
 
 
-; TODO: fix  broken format
 [module/cpu]
 type = internal/cpu
 interval = 1
-
 format = <label>
-; format = <label> <ramp-coreload>
-
 label =  %percentage%%
-
-ramp-coreload-0 = ▁
-ramp-coreload-1 = ▂
-ramp-coreload-2 = ▃
-ramp-coreload-3 = ▄
-ramp-coreload-4 = ▅
-ramp-coreload-5 = ▆
-ramp-coreload-6 = ▇
-ramp-coreload-7 = █
-; mapping = true
-; ramp-coreload-underline = ${colors.dred}
-
 padding = 2
-
 label-underline = ${colors.dred}
 label-background = ${colors.background}
 
@@ -239,8 +218,6 @@ label-background = ${colors.background}
 type = internal/fs
 mount-0 = /
 interval = 20
-; fixed-values = true
-
 label-mounted =   %free%
 label-mounted-underline = ${colors.dred}
 label-mounted-background = ${colors.background}
@@ -248,43 +225,31 @@ label-mounted-background = ${colors.background}
 
 [module/memory]
 type = internal/memory
-
 interval = 3
-
 format = <label> 
-
 label =  %percentage_used%%
 label-underline = ${colors.dred}
 label-background = ${colors.background}
 
 
-; TODO: fix label (fonts)
 [module/wlan]
 type = internal/network
 interface = wlp3s0
 interval = 3.0
 
-ramp-signal-0 = 😱
-ramp-signal-1 = 😠
-ramp-signal-2 = 😒
-ramp-signal-3 = 😊
-ramp-signal-4 = 😃
-ramp-signal-5 = 😈
-
 format-connected-padding = 1
 format-disconnected-padding = 1
 
-;format-connected = <label-connected> <ramp-signal>
 format-connected = <label-connected> 
 format-connected-underline = ${colors.white}
 format-disconnected-underline = ${colors.lgrey}
 
-label-connected =%downspeed:9%  %essid:0:10:...%
+label-connected =%downspeed:9%  %essid:0:8:…%
 label-disconnected = 
 label-disconnected-foreground = ${colors.lgrey}
 
 
-[module/vpncheck]
+[module/vpn]
 type = custom/script
 exec = pgrep openvpn
 interval = 5
@@ -328,5 +293,8 @@ format-background = ${colors.tblue}
 
 ; vim:ft=dosini
 
-
-
+[module/redshift]
+type = custom/script
+exec = ~/.config/polybar/scripts/redshift.sh
+click-left = '~/.config/polybar/scripts/redshift.sh --toggle'
+interval = 5
