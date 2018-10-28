@@ -63,6 +63,7 @@ export LANG=en_US.UTF-8
 export PATH=$HOME/.bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
+export JAVA_OPTS="-Dswing.systemlaf=javax.swing.plaf.metal.GTKLookAndFeel"
 #CC
 export MAVEN_OPTS="-Xmx2048m"
 
@@ -108,3 +109,4 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+source /usr/share/nvm/init-nvm.sh
