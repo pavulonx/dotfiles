@@ -1,17 +1,21 @@
+;----------------
+; General
+;----------------
 
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+locale = en_US.UTF-8
 
-;=====================================================
-;
-;   To learn more about how to configure Polybar
-;   go to https://github.com/jaagr/polybar
-;
-;   The README contains alot of information
-;
-;=====================================================
+[global/wm]
+margin-top = 0
+margin-bottom = 0
 
 [colors]
 transparent = #00000000
-#background = #2f343f
 background = #222d32
 foreground = #ebdbb2
 black = #7c6f64
@@ -52,77 +56,57 @@ twhite = #222d32
 tgrey = #222d32
 
 
-[global/wm]
-margin-top = 5
-margin-bottom = 5
-
 [bar/top]
 width = 100%
 height = 22
-offset-x = 0
-offset-y = 0
+fixed-center = true
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 
+spacing = 1
 
+padding-left = 0
+padding-right = 2
 
-locale = en_US.UTF-8
+module-margin-left = 2
+module-margin-right = 2
+module-margin-top = 2
+module-margin-bottom = 2
 
-3background = ${colors.tblack}
+;colors
 background = ${colors.background}
 foreground = ${colors.foreground}
+line-color = #f00
 
+line-size = 2
 font-0 = Noto Sans:size=9:fontformat=truetype
 font-1 = FontAwesome:size=10;0
 
-modules-left = i3 xwindow
-modules-center = 
-modules-right = vpncheck wlan backlight volumeintel volumeasus temperature cpu memory filesystem battery date
-
+;; tray
 tray-position = right
-tray-padding = 2
-
-; Background color for the tray container
-; By default the tray container will use the bar
-; background color.
-; Note: 32 bit alpha blending is not supported.
-; tray-background = ${root.background}
-; tray-background = ${colors.tblack}
+tray-padding = 4
 tray-background = ${colors.background}
 tray-transparent = false
-
-; If true, the bar will not shift its
-; contents when the tray changes
 tray-detached = false
-
-; Tray icon max size
 ;tray-maxsize = 16
-
-
-
-; Tray offset defined as pixel value (e.g. 35) or percentage (e.g. 50%)
-; tray-offset-x = 0
+tray-offset-x = 2
 ; tray-offset-y = 0
+tray-scale = 01.00
 
-; Pad the sides of each tray icon
-; tray-padding = 0
+modules-left = i3 xwindow
+modules-center = date
+modules-right = music vpncheck wlan backlight volume temperature cpu memory filesystem battery 
 
-; Scale factor for tray clients
-; tray-scale = 1.0
+underline-size = 1
 
-
-underline-size = 3
-
-spacing = 1
-padding-left = 0
-padding-right = 2
-module-margin-left = 2
-module-margin-right = 2
+;----------------
+; Modules
+;----------------
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:70:...%
+label = %title:0:100:...%
 
 [module/i3]
 type = internal/i3
@@ -171,62 +155,41 @@ format-underline = ${colors.dyellow}
 format-padding = 2
 label =   %percentage%
 
-[module/spotify]
+[module/music]
 type = custom/script
-exec = BLOCK_INSTANCE=spotify $HOME/.bin/mediaplayer.sh | xargs echo
-label =   %output:0:25:...%
+exec = $HOME/.config/polybar/scripts/mediaplayer.sh | xargs echo
+label =   %output:0:40:...%
 ;format-foreground = #aacf00
 ;format-background = #80aacf00
 format-underline = #aacf00
 format-padding = 2
 interval = 2
-;exec-if = pgrep -x spotify
+exec-if = pgrep -x spotify || pgrep -x deadbeef
 
-[module/mediaplayer]
-type = custom/script
-exec = BLOCK_INSTANCE=DeaDBeeF $HOME/.bin/mediaplayer.sh
-label =   %output:0:30:...%
 
-format-underline = ${colors.dblue}
-format-padding = 2
-interval = 5
-format-background = ${colors.tblue}
-exec-if = pgrep deadbeef
-
-[module/volumeintel]
-type = internal/volume
+[module/volume]
+type = internal/alsa
 format-volume = <ramp-volume> <label-volume>
 master-mixer = Master
 label-muted =  muted
-
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 format-volume-underline = ${colors.dgreen}
 format-volume-padding = 2
-mapping = true
 format-volume-background = ${colors.tgreen}
-
-[module/volumeasus]
-type = internal/volume
-format-volume = <label-volume>
-master-mixer = PCM
-label-muted =  muted
-
-label-volume =  %percentage%
-format-volume-underline = ${colors.dgreen}
-format-volume-padding = 2
 mapping = true
-format-volume-background = ${colors.tgreen}
+
 
 [module/temperature]
 type = custom/script
-exec = $HOME/.bin/temperature.sh
+exec = $HOME/.config/polybar/scripts/temperature.sh
 interval = 10
 label =   %output%
 format-underline = ${colors.dred}
 format-padding = 2
 format-background = ${colors.tred}
+
 
 [module/date]
 type = internal/date
@@ -364,3 +327,6 @@ animation-charging-framerate = 750
 format-background = ${colors.tblue}
 
 ; vim:ft=dosini
+
+
+

@@ -6,6 +6,7 @@ cp -v ~/.config/compton.conf ./compton/compton.conf
 cp -v ~/.i3/config ./.i3/config
 cp -v ~/.config/polybar/config ./polybar/config
 cp -v ~/.config/polybar/launch.sh ./polybar/launch.sh
+cp -vr ~/.config/polybar ./
 cp -v /etc/i3status.conf ./.i3/i3status.conf
 cp -v ~/.config/i3-scrot.conf ./i3-scrot.conf
 cp -v /usr/bin/blurlock ./blurlock
