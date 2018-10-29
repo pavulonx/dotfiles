@@ -80,8 +80,13 @@ foreground = ${colors.foreground}
 line-color = #f00
 
 line-size = 2
-font-0 = Noto Sans:size=9:fontformat=truetype
-font-1 = FontAwesome:size=10;0
+;font-0 = Noto Sans:size=9:fontformat=truetype
+font-0 = Selawik:size=9:fontformat=truetype
+font-1 = Noto Sans:size=9:fontformat=truetype
+font-2 = NotoSans-Regular:size=8;-1
+font-3 = MaterialIcons:size=10;0
+font-4 = FontAwesome:size=10;0
+font-5 = DejaVuSansMono Nerd Font:size=10;0
 
 ;; tray
 tray-position = right
@@ -96,7 +101,7 @@ tray-scale = 01.00
 
 modules-left = i3 xwindow
 modules-center = date
-modules-right = music vpn wlan powermenu backlight volume temperature cpu memory filesystem battery ;redshift
+modules-right = music vpn wlan powermenu backlight filesystem temperature cpu memory battery volume ;redshift
 
 underline-size = 1
 
@@ -119,9 +124,9 @@ label-mode-foreground = ${colors.background}
 label-mode-background = ${colors.dyellow}
 label-mode-padding = 1
 
-label-focused-foreground = ${colors.magenta}
-label-focused-background = ${colors.tmagenta}
-label-focused-underline = ${colors.dmagenta}
+label-focused-foreground = ${colors.dblue}
+label-focused-background = ${colors.tblue}
+label-focused-underline = ${colors.dblue}
 label-focused-padding = 1
 
 label-unfocused-padding = 1
@@ -141,7 +146,6 @@ label-visible-padding = 1
 ;format-background = ${colors.background}
 ;format-foreground = ${colors.red}
 ;format-foreground = ${colors.tred}
-;format-underline = ${colors.red}
 
 ;format-padding = 2
 ;click-left = urxvt -e sudo pacman -Syu
@@ -150,8 +154,6 @@ label-visible-padding = 1
 type = internal/backlight
 card = intel_backlight
 format = <label>
-format-background = ${colors.tyellow}
-format-underline = ${colors.dyellow}
 format-padding = 2
 label =   %percentage%
 
@@ -159,9 +161,6 @@ label =   %percentage%
 type = custom/script
 exec = $HOME/.config/polybar/scripts/mediaplayer.sh | xargs echo
 label =   %output:0:40:...%
-;format-foreground = #aacf00
-;format-background = #80aacf00
-format-underline = #aacf00
 format-padding = 2
 interval = 2
 exec-if = pgrep -x spotify || pgrep -x deadbeef
@@ -172,10 +171,10 @@ type = internal/alsa
 format-volume = <ramp-volume> <label-volume>
 master-mixer = Master
 label-muted =  muted
+label-muted-foreground = #66
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
-format-volume-underline = ${colors.dgreen}
 format-volume-padding = 2
 format-volume-background = ${colors.tgreen}
 mapping = true
@@ -186,9 +185,7 @@ type = custom/script
 exec = $HOME/.config/polybar/scripts/temperature.sh
 interval = 10
 label =   %output%
-format-underline = ${colors.dred}
 format-padding = 2
-format-background = ${colors.tred}
 
 
 [module/date]
@@ -198,20 +195,40 @@ date = "  %d.%m.%Y"
 date-alt = "  %A, %d. %B"
 time = "%H:%M"
 time-alt = "%H:%M:%S"
-format-underline = ${colors.dcyan} 
 format-padding = 2
-label = "%{A3:gsimplecal:}%date% | %time%%{A}"
+label = "%{A3:gsimplecal:}%date%    %time%%{A}"
 format-background = ${colors.tcyan}
-
 
 [module/cpu]
 type = internal/cpu
-interval = 1
-format = <label>
-label =  %percentage%%
-padding = 2
-label-underline = ${colors.dred}
-label-background = ${colors.background}
+interval = 0.5
+format = <label> <ramp-coreload>
+label = 
+
+ramp-coreload-0 = ▁
+ramp-coreload-0-font = 2
+ramp-coreload-0-foreground = ${colors.foreground}
+ramp-coreload-1 = ▂
+ramp-coreload-1-font = 2
+ramp-coreload-1-foreground = ${colors.foreground}
+ramp-coreload-2 = ▃
+ramp-coreload-2-font = 2
+ramp-coreload-2-foreground = ${colors.foreground}
+ramp-coreload-3 = ▄
+ramp-coreload-3-font = 2
+ramp-coreload-3-foreground = ${colors.foreground}
+ramp-coreload-4 = ▅
+ramp-coreload-4-font = 2
+ramp-coreload-4-foreground = #fba922
+ramp-coreload-5 = ▆
+ramp-coreload-5-font = 2
+ramp-coreload-5-foreground = #fba922
+ramp-coreload-6 = ▇
+ramp-coreload-6-font = 2
+ramp-coreload-6-foreground = #ff5555
+ramp-coreload-7 = █
+ramp-coreload-7-font = 2
+ramp-coreload-7-foreground = #ff5555
 
 
 [module/filesystem]
@@ -219,17 +236,26 @@ type = internal/fs
 mount-0 = /
 interval = 20
 label-mounted =   %free%
-label-mounted-underline = ${colors.dred}
-label-mounted-background = ${colors.background}
 
 
 [module/memory]
 type = internal/memory
+format = <label> <bar-used>
+label = 
 interval = 3
-format = <label> 
-label =  %percentage_used%%
-label-underline = ${colors.dred}
-label-background = ${colors.background}
+bar-used-width = 8
+bar-used-foreground-0 = ${colors.foreground}
+bar-used-foreground-1 = ${colors.foreground}
+bar-used-foreground-2 = #fba922
+bar-used-foreground-3 = #ff5555
+bar-used-indicator = |
+bar-used-indicator-font = 6
+bar-used-indicator-foreground = #ff
+bar-used-fill = –
+bar-used-fill-font = 6
+bar-used-empty = –
+bar-used-empty-font = 6
+bar-used-empty-foreground = #444444
 
 
 [module/wlan]
@@ -239,11 +265,7 @@ interval = 3.0
 
 format-connected-padding = 1
 format-disconnected-padding = 1
-
 format-connected = <label-connected> 
-format-connected-underline = ${colors.white}
-format-disconnected-underline = ${colors.lgrey}
-
 label-connected =%downspeed:9%  %essid:0:8:…%
 label-disconnected = 
 label-disconnected-foreground = ${colors.lgrey}
@@ -254,7 +276,6 @@ type = custom/script
 exec = pgrep openvpn
 interval = 5
 label = vpn
-format-underline = #268bd2
 format-prefix = " "
 format-prefix-foreground = #5b
 
@@ -269,11 +290,8 @@ format-charging = <animation-charging> <label-charging>
 
 format-discharging = <ramp-capacity> <label-discharging>
 label-discharging = %percentage% (%time%)
-label-charging-underline = ${colors.dyellow}
-animation-charging-underline = ${colors.dyellow}
 
 format-full-prefix = "  "
-format-underline = ${colors.dblue}
 format-padding = 2
 
 ramp-capacity-0 = 
