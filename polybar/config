@@ -34,6 +34,7 @@ dcyan = #689d6a
 cyan = #8ec07c
 lgrey = #a89984
 white = #ebdbb2
+accentblue = #00bcd4
 
 ;tblack = #852f343f
 ;tred = #80fb4934
@@ -124,9 +125,9 @@ label-mode-foreground = ${colors.background}
 label-mode-background = ${colors.dyellow}
 label-mode-padding = 1
 
-label-focused-foreground = ${colors.dblue}
+label-focused-foreground = ${colors.accentblue}
 label-focused-background = ${colors.tblue}
-label-focused-underline = ${colors.dblue}
+label-focused-underline = ${colors.accentblue}
 label-focused-padding = 1
 
 label-unfocused-padding = 1
