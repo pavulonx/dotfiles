@@ -82,7 +82,8 @@ line-color = #f00
 
 line-size = 2
 ;font-0 = Noto Sans:size=9:fontformat=truetype
-font-0 = Selawik:size=9:fontformat=truetype
+#font-0 = Selawik:size=9:fontformat=truetype
+font-0 = Segoe UI:size=9:fontformat=truetype
 font-1 = Noto Sans:size=9:fontformat=truetype
 font-2 = NotoSans-Regular:size=8;-1
 font-3 = MaterialIcons:size=10;0
@@ -101,8 +102,8 @@ tray-offset-x = 2
 tray-scale = 01.00
 
 modules-left = i3 xwindow
-modules-center = date
-modules-right = music vpn wlan powermenu backlight filesystem temperature cpu memory battery volume ;redshift
+modules-center = ;date
+modules-right = music vpn wlan powermenu backlight filesystem temperature cpu memory battery volume date ;redshift
 
 underline-size = 1
 
@@ -112,7 +113,7 @@ underline-size = 1
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:100:...%
+label = %title:0:80:...%
 
 [module/i3]
 type = internal/i3
@@ -244,7 +245,7 @@ type = internal/memory
 format = <label> <bar-used>
 label = 
 interval = 3
-bar-used-width = 8
+bar-used-width = 6
 bar-used-foreground-0 = ${colors.foreground}
 bar-used-foreground-1 = ${colors.foreground}
 bar-used-foreground-2 = #fba922

@@ -1,7 +1,7 @@
 [global]
     # font = Cantarell 10
     # font = Noto Sans 10
-    font = Selawik 10
+    font = Segoe UI 10
 
     max_icon_size = 96 
     
