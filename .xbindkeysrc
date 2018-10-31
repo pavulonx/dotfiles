@@ -52,5 +52,14 @@
 "xdotool key Control+Page_Up"
    Control + b:7
 
+# thumb wheel down => previous tab
+"xte 'keydown Control_L' 'key Page_Down' 'keyup Control_L'"
+    b:6
+
+# thumb wheel up => next tab
+"xte 'keydown Control_L' 'key Page_Up' 'keyup Control_L'"
+    b:7
+
+
 #
 # End of xbindkeys configuration
