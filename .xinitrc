@@ -12,6 +12,7 @@ fi
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
+userkeybindings=$HOME/.xbindkeysrc
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
@@ -31,6 +32,10 @@ fi
 
 if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
+fi
+
+if [ -f "$userkeybindings" ]; then
+    xbindkeys -f "$userkeybindings"
 fi
 
 # start some nice programs

@@ -62,6 +62,11 @@
 "xte 'keydown Control_L' 'keydown Shift_L' 'key Tab' 'keyup Shift_L' 'keyup Control_L'"
     b:7
 
+# thumb wheel up => next tab
+"sleep 0.1 && xte 'keydown Control_L' 'key w' 'keyup Control_L'"
+    Control+Alt + Tab
+
+
 
 #
 # End of xbindkeys configuration
