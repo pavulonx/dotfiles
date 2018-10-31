@@ -53,11 +53,13 @@
    Control + b:7
 
 # thumb wheel down => previous tab
-"xte 'keydown Control_L' 'key Page_Down' 'keyup Control_L'"
+#"xte 'keydown Control_L' 'key Page_Down' 'keyup Control_L'"
+"xte 'keydown Control_L' 'key Tab' 'keyup Control_L'"
     b:6
 
 # thumb wheel up => next tab
-"xte 'keydown Control_L' 'key Page_Up' 'keyup Control_L'"
+#"xte 'keydown Control_L' 'key Page_Up' 'keyup Control_L'"
+"xte 'keydown Control_L' 'keydown Shift_L' 'key Tab' 'keyup Shift_L' 'keyup Control_L'"
     b:7
 
 
