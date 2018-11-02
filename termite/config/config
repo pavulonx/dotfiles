@@ -63,7 +63,8 @@ browser = xdg-open
 #foreground 		= #eceff1
 
 # black
-color0  = #263238
+#color0  = #263238
+color0  = #222d32
 color8  = #37474f
 
 # red
