@@ -83,3 +83,4 @@ application/vnd.adobe.flash.movie=vlc.desktop;
 application/x-sqlite3=nvim.desktop;
 application/rtf=libreoffice-writer.desktop;wine-extension-rtf.desktop;
 application/x-xz-compressed-tar=xarchiver.desktop;
+application/x-yaml=org.gnome.gedit.desktop;
