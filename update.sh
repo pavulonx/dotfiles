@@ -5,7 +5,7 @@ cp -v ~/.config/compton.conf ./compton/compton.conf
 cp -v ~/.config/i3-scrot.conf ./i3-scrot.conf
 cp -v ~/.config/mimeapps.list ./mimeapps.list
 cp -v ~/.config/termite/config ./termite/config
-cp -vr ~/.config/polybar ./
+cp -vr ~/.config/polybar ./home/.config/
 
 cp -v ~/.i3/config ./.i3/config
 
