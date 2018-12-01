@@ -8,7 +8,7 @@ cp -v ~/.config/polybar/config ./polybar/config
 cp -v ~/.config/polybar/launch.sh ./polybar/launch.sh
 cp -vr ~/.config/polybar ./
 cp -v ~/.config/i3-scrot.conf ./i3-scrot.conf
-cp -v /usr/bin/blurlock ./blurlock
+cp -v /usr/bin/blurlock ./usr/bin/blurlock
 
 cp -v /etc/X11/xorg.conf.d/10-monitor.conf ./10-monitor.conf
 
