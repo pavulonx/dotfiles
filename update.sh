@@ -1,5 +1,8 @@
 #!/bin/sh
 
+cp -v ~/.xbindkeysrc .home/
+
+
 cp -v ~/.config/dunst/dunstrc ./dunst/dunstrc
 cp -v ~/.config/compton.conf ./compton/compton.conf
 cp -v ~/.config/i3-scrot.conf ./i3-scrot.conf
@@ -25,7 +28,6 @@ cat ~/.exports.sh | cut -d= -f1 > .exports.sh
 
 cp -vr ~/.bin .
 cp -v ~/.vimrc ./.vimrc
-cp -v ~/.xbindkeysrc ./
 
 cp -v /usr/bin/i3exit          ./usr/bin/i3exit
 cp -v /usr/local/bin/xflock4 ./usr/local/bin/xflock4
