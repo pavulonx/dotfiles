@@ -1,23 +1,23 @@
 #!/bin/sh
 
-cp -v 	~/.zshrc 	./home/
-cp -v 	~/.xbindkeysrc 	./home/
-cp -vr 	~/.bin 		./home/
-cp -v 	~/.xinitrc 	./home/
-cp -v 	~/.vimrc 	./home/
-cp -v 	~/.rofi.sh 	./home/
-cp -v 	~/.Xmodmap 	./home/	
-cp -v 	~/.aliases.sh 	./home/
+cp -v 	~/.zshrc 			./home/
+cp -v 	~/.xbindkeysrc 			./home/
+cp -vr 	~/.bin 				./home/
+cp -v 	~/.xinitrc 			./home/
+cp -v 	~/.vimrc 			./home/
+cp -v 	~/.rofi.sh 			./home/
+cp -v 	~/.Xmodmap 			./home/
+cp -v 	~/.aliases.sh 			./home/
 cat ~/.exports.sh | cut -d= -f1 > ./home/.exports.sh
 
-cp -vr 	~/.i3 		./home/
+cp -vr 	~/.i3 				./home/
 
 cp -v 	~/.config/compton.conf 		./home/.config/
 cp -v 	~/.config/mimeapps.list 	./home/.config/
 cp -v 	~/.config/i3-scrot.conf 	./home/.config/
 cp -vr 	~/.config/polybar 		./home/.config/
-cp -vr 	~/.config/dunst/dunstrc 	./home/.config/
-cp -vr 	~/.config/termite/config 	./home/.config/
+cp -vr 	~/.config/dunst 		./home/.config/
+cp -vr 	~/.config/termite 		./home/.config/
 
 cp -v ~/.Xresources ./.Xresources
 cp -v ~/.extend.Xresources ./.extend.Xresources
