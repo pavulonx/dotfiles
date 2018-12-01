@@ -4,17 +4,15 @@
 #
 # Executed by startx (run your window manager from here)
 
-if [[ -f ~/.extend.xinitrc ]];then
-	. ~/.extend.xinitrc
-else
-	DEFAULT_SESSION=xfce4-session
-fi
-
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
 userkeybindings=$HOME/.xbindkeysrc
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
+
+DEFAULT_SESSION='i3 --shmlog-size 0'
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+export BROWSER=chromium
 
 # merge in defaults and keymaps
 
@@ -47,8 +45,6 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     unset f
 fi
 
-xset dpms 600 1200 2400
-
 get_session(){
 	local dbus_args=(--sh-syntax --exit-with-session)
 	case $1 in
@@ -75,12 +71,3 @@ get_session(){
 }
 
 exec $(get_session)
-
-
-
-
-# twm &
-# xclock -geometry 50x50-1+1 &
-# xterm -geometry 80x50+494+51 &
-# xterm -geometry 80x20+494-0 &
-#exec xterm -geometry 80x66+0+0 -name login
