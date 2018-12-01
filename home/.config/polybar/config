@@ -102,8 +102,10 @@ tray-offset-x = 2
 tray-scale = 01.00
 
 modules-left = i3 xwindow
-modules-center = ;date
-modules-right = music vpn wlan powermenu backlight filesystem temperature cpu memory battery volume date ;redshift
+modules-center = 
+;date
+modules-right = music vpn wlan powermenu backlight filesystem temperature cpu memory battery volume date 
+;redshift
 
 underline-size = 1
 
