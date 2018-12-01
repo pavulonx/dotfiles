@@ -10,18 +10,18 @@ cp -v 	~/.Xmodmap 	./home/
 cp -v 	~/.aliases.sh 	./home/
 cat ~/.exports.sh | cut -d= -f1 > ./home/.exports.sh
 
+cp -vr 	~/.i3 		./home/
 
-cp -v ~/.config/dunst/dunstrc ./dunst/dunstrc
-cp -v ~/.config/compton.conf ./compton/compton.conf
-cp -v ~/.config/i3-scrot.conf ./i3-scrot.conf
-cp -v ~/.config/mimeapps.list ./mimeapps.list
-cp -v ~/.config/termite/config ./termite/config
-cp -vr ~/.config/polybar ./home/.config/
+cp -v 	~/.config/compton.conf 		./home/.config/
+cp -v 	~/.config/mimeapps.list 	./home/.config/
+cp -v 	~/.config/i3-scrot.conf 	./home/.config/
+cp -vr 	~/.config/polybar 		./home/.config/
+cp -vr 	~/.config/dunst/dunstrc 	./home/.config/
+cp -vr 	~/.config/termite/config 	./home/.config/
 
 cp -v ~/.Xresources ./.Xresources
 cp -v ~/.extend.Xresources ./.extend.Xresources
 
-cp -v ~/.i3/config ./.i3/config
 
 cp -v /usr/bin/i3exit          ./usr/bin/i3exit
 cp -v /usr/local/bin/xflock4 ./usr/local/bin/xflock4
