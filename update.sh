@@ -40,7 +40,7 @@ cp -vr ~/.bin .
 cp -v ~/.vimrc ./.vimrc
 
 cp -v /usr/bin/i3exit ./i3exit
-cp -v /usr/local/bin/xflock4 ./xflock
+cp -v /usr/local/bin/xflock4 ./usr/local/bin/xflock4
 cp -v ~/.xbindkeysrc ./
 
 # cp -v ~/.exports.sh ./exports.sh
