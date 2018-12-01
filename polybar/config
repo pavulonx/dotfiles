@@ -82,7 +82,7 @@ line-color = #f00
 
 line-size = 2
 ;font-0 = Noto Sans:size=9:fontformat=truetype
-#font-0 = Selawik:size=9:fontformat=truetype
+;font-0 = Selawik:size=9:fontformat=truetype
 font-0 = Segoe UI:size=9:fontformat=truetype
 font-1 = Noto Sans:size=9:fontformat=truetype
 font-2 = NotoSans-Regular:size=8;-1

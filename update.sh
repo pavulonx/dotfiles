@@ -26,7 +26,7 @@ cp -v ~/.extend.Xresources ./.extend.Xresources
 cp -v ~/.config/mimeapps.list ./mimeapps.list
 cp -v ~/.Xmodmap ./.Xmodmap
 
-cp -v ~/.rofi.sh ./.rofi.sh
+cp -v ~/.rofi.sh ./home/.rofi.sh
 cp -v /home/rozen/.bin/toggle_monitor.sh ./.bin/toggle_monitor.sh
 
 cp -v ~/.config/termite/config ./termite/config
