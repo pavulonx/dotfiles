@@ -2,6 +2,7 @@
 
 cp -v 	~/.zshrc 			./home/
 cp -v 	~/.xbindkeysrc 			./home/
+cp -v 	~/.Xresources 			./home/
 cp -v 	~/.xinitrc 			./home/
 cp -v 	~/.vimrc 			./home/
 cp -v 	~/.rofi.sh 			./home/
@@ -18,8 +19,6 @@ cp -vr 	~/.config/polybar 		./home/.config/
 cp -vr 	~/.config/dunst 		./home/.config/
 cp -vr 	~/.config/termite 		./home/.config/
 
-cp -v ~/.Xresources ./.Xresources
-cp -v ~/.extend.Xresources ./.extend.Xresources
 
 cp -v /usr/bin/i3exit          ./usr/bin/i3exit
 cp -v /usr/local/bin/xflock4 ./usr/local/bin/xflock4
