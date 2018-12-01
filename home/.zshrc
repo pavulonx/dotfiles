@@ -1,7 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/jrozen/.oh-my-zsh"
-
-ZSH_THEME="robbyrussell"
+source ~/.powerline.conf.zsh
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -90,6 +89,9 @@ eval $(ssh-agent) >> /dev/null;
 ssh-add $SSH_KEY_PATH 2> /dev/null
 
 # plugins
+source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval $(thefuck --alias)
+
+cat ~/TODO

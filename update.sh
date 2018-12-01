@@ -1,6 +1,7 @@
 #!/bin/sh
 
 cp -v 	~/.zshrc 			./home/
+cp -v 	~/.powerline.conf.zsh	./home/
 cp -v 	~/.xbindkeysrc 			./home/
 cp -v 	~/.Xresources 			./home/
 cp -v 	~/.xinitrc 			./home/
