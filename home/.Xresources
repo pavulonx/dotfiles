@@ -1,4 +1,4 @@
-URxvt.termName: rxvt-unicode-256color
+Rxvt.termName: rxvt-unicode-256color
 
 Xft.dpi:       96
 Xft.antialias: true
@@ -75,10 +75,10 @@ rofi.color-urgent: #263238, #ff9800, #263238, #ffa74d, #eceff1
 
 !FONT
 !font sie must be higher
-!urxvt*font: xft:SourceCodePro:size=11:antialias=true,xft:Font\ Awesome:antialias=true:pixelsize=15
+urxvt*font: xft:SourceCodePro:size=11:antialias=true,xft:Font\ Awesome:antialias=true:pixelsize=15
 
 
-Xcursor.theme: xcursor-breeze
+Xcursor.theme: Vanilla-DMZ-AA
 Xcursor.size:                     0
 
 !URxvt.font:                       9x15,xft:TerminessTTFNerdFontMono
