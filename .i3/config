@@ -58,9 +58,8 @@ bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'Dunst restart'"
 bindsym $mod+Shift+plus --release exec --no-startup-id "autorandr -c; exec notify-send 'Autorandr change'; true"
-bindsym $mod+Menu --release exec --no-startup-id i3-scrot -w
-bindsym $mod+Shift+Menu --release exec --no-startup-id i3-scrot -s
-bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
+bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
+bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Shift+Ctrl+x --release exec --no-startup-id xkill
 
 # focus_follows_mouse no
@@ -69,7 +68,7 @@ bindsym $mod+Shift+Ctrl+x --release exec --no-startup-id xkill
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
-bindsym $mod+odiaeresis focus right
+bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -81,7 +80,7 @@ bindsym $mod+Right focus right
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
-bindsym $mod+Shift+odiaeresis move right
+bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -228,7 +227,7 @@ for_window [title="File Transfer*"] floating enable
 for_window [class="Galculator"] floating enable border pixel 1
 for_window [class="GParted"] floating enable border normal
 for_window [title="i3_help"] floating enable sticky enable border normal
-for_window [class="Lightdm-gtk-greeter-settings"] floating enable
+for_window [class="Lightdm-settings"] floating enable	
 for_window [class="Lxappearance"] floating enable sticky enable border normal
 for_window [class="Manjaro-hello"] floating enable
 for_window [class="Manjaro Settings Manager"] floating enable border normal
@@ -291,7 +290,7 @@ mode "resize" {
         bindsym j resize shrink width 5 px or 5 ppt
         bindsym k resize grow height 5 px or 5 ppt
         bindsym l resize shrink height 5 px or 5 ppt
-        bindsym odiaeresis resize grow width 5 px or 5 ppt
+        bindsym semicolon resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -308,7 +307,6 @@ mode "resize" {
 # bindsym $mod+9 exec --no-startup-id blurlock
 # bindsym $mod+9 exec --no-startup-id betterlockscreen -l
 bindsym $mod+9 exec --no-startup-id xautolock -locknow
-# bindsym $mod+9 exec --no-startup-id $HOME/.bin/i3-betterlockcreen 
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -330,7 +328,7 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 #exec_always --no-startup-id ~/.bin/toggle_monitor.sh
 
 ##
-# bar{} section has been ramoved, using polybar instead
+# 'bar' section has been removed, using polybar instead
 ##
 
 # hide/unhide i3status bar
