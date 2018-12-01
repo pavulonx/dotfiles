@@ -2,14 +2,13 @@
 
 cp -v 	~/.zshrc 			./home/
 cp -v 	~/.xbindkeysrc 			./home/
-cp -vr 	~/.bin 				./home/
 cp -v 	~/.xinitrc 			./home/
 cp -v 	~/.vimrc 			./home/
 cp -v 	~/.rofi.sh 			./home/
 cp -v 	~/.Xmodmap 			./home/
 cp -v 	~/.aliases.sh 			./home/
-cat ~/.exports.sh | cut -d= -f1 > ./home/.exports.sh
-
+cat ~/.exports.sh | cut -d= -f1 > 	./home/.exports.sh
+cp -vr 	~/.bin 				./home/
 cp -vr 	~/.i3 				./home/
 
 cp -v 	~/.config/compton.conf 		./home/.config/
@@ -21,7 +20,6 @@ cp -vr 	~/.config/termite 		./home/.config/
 
 cp -v ~/.Xresources ./.Xresources
 cp -v ~/.extend.Xresources ./.extend.Xresources
-
 
 cp -v /usr/bin/i3exit          ./usr/bin/i3exit
 cp -v /usr/local/bin/xflock4 ./usr/local/bin/xflock4
