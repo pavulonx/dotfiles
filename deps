@@ -1,3 +1,4 @@
+# packages
 polybar
 rofi
 termite
@@ -5,5 +6,17 @@ chromium
 thunar
 xdotool
 xautomation
-
 lightdm-webkit-theme-litarvan
+feh
+# icons
+nerd-fonts-complete
+nerd-fonts-terminus
+ttf-nerd-fonts-symbols
+nerd-fonts-dejavu-complete
+ttf-windows|ttf-selawik|segoe-ui
+adobe-source-code-pro-fonts
+awesome-terminal-fonts
+otf-font-awesome
+ttf-font-awesome
+ttf-font-icons
+
