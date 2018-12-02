@@ -1,4 +1,4 @@
-Rxvt.termName: rxvt-unicode-256color
+URxvt.termName: rxvt-unicode-256color
 
 Xft.dpi:       96
 Xft.antialias: true
