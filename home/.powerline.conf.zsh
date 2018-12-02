@@ -14,3 +14,5 @@ POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
 
 POWERLEVEL9K_STATUS_VERBOSE=false
+
+source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
