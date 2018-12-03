@@ -61,6 +61,7 @@ tgrey = #222d32
 width = 100%
 height = 22
 fixed-center = true
+monitor = ${env:MONITOR:}
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev

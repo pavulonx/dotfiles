@@ -78,7 +78,7 @@ eval $(ssh-agent) >> /dev/null;
 ssh-add "$SSH_KEY_PATH" 2> /dev/null
 
 # Plugins
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval $(thefuck --alias)
 
