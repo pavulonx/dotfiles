@@ -62,7 +62,11 @@ bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Shift+Ctrl+x --release exec --no-startup-id xkill
 
-# focus_follows_mouse no
+# focus on mouse move
+focus_follows_mouse no
+
+# disble jump to workspace on focus for
+no_focus [class="jetbrains-idea"]
 
 # change focus
 bindsym $mod+j focus left
