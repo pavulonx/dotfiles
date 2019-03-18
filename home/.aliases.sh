@@ -17,3 +17,6 @@ alias drc=docker-compose
 
 # git
 alias gitunmodlastcommit='git ls-files --full-name | grep -v "$(git diff --name-only HEAD)"'
+alias gdo='git diff origin/"$(git_current_branch)"'
+alias gdcao='git diff --cached origin/"$(git_current_branch)"'
+
