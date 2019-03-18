@@ -7,6 +7,7 @@ cp -v 	~/.Xresources 			    ./home/
 cp -v 	~/.xinitrc 			        ./home/
 cp -v 	~/.vimrc 			        ./home/
 cp -v 	~/.rofi.sh 			        ./home/
+cp -v 	~/.func.sh   			    ./home/
 cp -v 	~/.aliases.sh 			    ./home/
 cat ~/.exports.sh | cut -d= -f1 > 	./home/.exports.sh
 cp -vr 	~/.bin 				        ./home/
