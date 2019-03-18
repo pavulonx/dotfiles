@@ -13,8 +13,6 @@ function displaytime {
   printf '%d seconds\n' $S
 }
 
-alias uptimem="awk '{print $1*1000}' /proc/uptime"
-
 function  timetohome {
     while true; do
         printf "\033c"
