@@ -48,6 +48,9 @@ source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 export PATH=$HOME/.bin:/usr/local/bin:$PATH
 
+export VISUAL='vim'
+export EDITOR="$VISUAL"
+
 # Java
 export JAVA_OPTS="-Dswing.systemlaf=javax.swing.plaf.metal.GTKLookAndFeel"
 export MAVEN_OPTS="-Xmx2048m"
