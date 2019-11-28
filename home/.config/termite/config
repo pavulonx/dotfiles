@@ -1,109 +1,42 @@
 [options]
-allow_bold = true
-#audible_bell = false
-clickable_url = true
-dynamic_title = true
-#font = Monospace 9
-font = SourceCodePro 10
-#font = DejaVuSansMono Nerd Font Mono 10
-#fullscreen = true
-#geometry = 640x480
-#icon_name = terminal
-#mouse_autohide = false
-#scroll_on_output = false
-#scroll_on_keystroke = true
-# Length of the scrollback buffer, 0 disabled the scrollback buffer
-# and setting it to a negative value means "infinite scrollback"
-scrollback_lines = 20000
-#search_wrap = true
-#urgent_on_bell = true
-#hyperlinks = false
-
-# $BROWSER is used by default if set, with xdg-open as a fallback
+cell_height_scale = 1.0
+cell_width_scale = 1.0
 browser = xdg-open
-
-# "system", "on" or "off"
-#cursor_blink = system
-
-# "block", "underline" or "ibeam"
-#cursor_shape = block
-
-# Hide links that are no longer valid in url select overlay mode
-#filter_unmatched_urls = true
-
-# Emit escape sequences for extra modified keys
-#modify_other_keys = false
-
-# set size hints for the window
-#size_hints = false
-
-# "off", "left" or "right"
-#scrollbar = off
+clickable_url = true
+cursor_blink = system
+cursor_shape = block
+dynamic_title = true
+filter_unmatched_urls = true
+icon_name = terminal
+modify_other_keys = false
+mouse_autohide = false
+scroll_on_output = false
+scroll_on_keystroke = true
+scrollback_lines = 25000
+size_hints = false
+search_wrap = true
+urgent_on_bell = true
+scrollbar = right
+font = SourceCodePro 10
+scrollbar = right
 
 [colors]
-# If both of these are unset, cursor falls back to the foreground color,
-# and cursor_foreground falls back to the background color.
-#cursor = #dcdccc
-#cursor_foreground = #dcdccc
+background =    #263238
+foreground =    #eceff1
+color0 =        #2c3e50
+color1 =        #c0392b
+color2 =        #27ae60
+color3 =        #f39c12
+color4 =        #2980b9
+color5 =        #8e44ad
+color6 =        #16a085
+color7 =        #bdc3c7
+color8 =        #34495e
+color9 =        #e74c3c
+color10 =       #2ecc71
+color11 =       #f1c40f
+color12 =       #3498db
+color13 =       #9b59b6
+color14 =       #2AA198
+color15 =       #ecf0f1
 
-#foreground = #dcdccc
-#foreground_bold = #ffffff
-#background = #3f3f3f
-
-# 20% background transparency (requires a compositor)
-#background = rgba(63, 63, 63, 0.8)
-#background = rgba(1f, 29, 2d, 0.8)
-#foreground = rgba(00, 188, 212, 0.8)
-
-# If unset, will reverse foreground and background
-# highlight = #2f2f2f
-
-
-#background 		= #263238
-#foreground 		= #eceff1
-
-# black
-#color0  = #263238
-color0  = #222d32
-color8  = #37474f
-
-# red
-color1  = #ff9800
-color9  = #ffa74d
-
-# green
-color2  = #8bc34a
-color10 = #9ccc65
-
-# yellow
-color3  = #ffc107
-color11 = #ffa000
-
-# blue
-color4  = #03a9f4
-color12 = #81d4fa
-
-# magenta
-color5  = #e91e63
-color13 = #ad1457
-
-# cyan
-color6  = #009688
-color14 = #26a69a
-
-# white
-color7  = #cfd8dc
-color15 = #eceff1
-
-[hints]
-#font = Monospace 12
-#foreground = #dcdccc
-#background = #3f3f3f
-#active_foreground = #e68080
-#active_background = #3f3f3f
-#padding = 2
-#border = #3f3f3f
-#border_width = 0.5
-#roundness = 2.0
-
-# vim: ft=dosini cms=#%s

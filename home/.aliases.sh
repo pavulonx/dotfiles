@@ -1,8 +1,8 @@
 #!/bin/sh
 # cd
-alias cdpwr="cd $PWR_HOME"
 alias cdapp="cd ${APPS}"
 
+alias xclip='xclip -selection c'
 alias lt='ls -lat'
 
 alias manpacman="cat /usr/share/oh-my-zsh/plugins/archlinux/README.md"

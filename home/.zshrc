@@ -1,5 +1,4 @@
 # Path to your oh-my-zsh installation.
-
 DEFAULT_OMZSH_INSTALLATION_DIR="/usr/share/oh-my-zsh"
 if [ -f "$DEFAULT_OMZSH_INSTALLATION_DIR/oh-my-zsh.sh" ]; then
     export ZSH="$DEFAULT_OMZSH_INSTALLATION_DIR"
