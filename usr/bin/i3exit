@@ -26,10 +26,12 @@ case "$1" in
         dm-tool switch-to-greeter
         ;;
     suspend)
-        $locker $params && $logind suspend
+        $locker $params &
+        sleep 1 && $logind suspend
         ;;
     hibernate)
-        $locker $params && $logind hibernate
+        $locker $params &
+        sleep 1 && $logind hibernate
         ;;
     reboot)
         $logind reboot
