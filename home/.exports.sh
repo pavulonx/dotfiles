@@ -1,4 +1,4 @@
 #!/bin/sh
-export WORKSPACE="~/workspace/"
+export WORKSPACE
 # ssh
 export SSH_KEY_PATH
