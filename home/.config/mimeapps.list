@@ -22,13 +22,15 @@ x-scheme-handler/unknown=chromium.desktop
 inode/directory=Thunar.desktop
 application/x-shellscript=org.gnome.gedit.desktop
 x-scheme-handler/webcal=chromium.desktop
+x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=libreoffice-calc.desktop
 
 [Added Associations]
 x-scheme-handler/http=chromium.desktop;
 x-scheme-handler/https=chromium.desktop;
 x-scheme-handler/ftp=chromium.desktop;
 x-scheme-handler/chrome=chromium.desktop;
-text/html=firefox-developer-edition.desktop;chromium.desktop;org.gnome.gedit.desktop;firefox.desktop;mousepad.desktop;elinks.desktop;
+text/html=code-oss.desktop;org.gnome.gedit.desktop;firefox-developer-edition.desktop;chromium.desktop;firefox.desktop;mousepad.desktop;elinks.desktop;
 application/x-extension-htm=chromium.desktop;
 application/x-extension-html=chromium.desktop;
 application/x-extension-shtml=chromium.desktop;

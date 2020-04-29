@@ -5,8 +5,8 @@
 set $mod Mod4
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 1
-new_float normal
+default_border pixel 1
+default_floating_border normal
 
 # Hide borders
 hide_edge_borders none
@@ -32,7 +32,7 @@ bindsym $mod+Shift+q kill
 
 # start program launcher
 # bindsym $mod+d exec --no-startup-id  j4-dmenu-desktop --display-binary --usage-log='/home/rozen/.j4-dmenu-desktop.log' --dmenu='dmenu -i -nb "#222d32" -sb "#00BCD4"'
-bindsym $mod+d exec --no-startup-id  $HOME/.rofi.sh 
+bindsym $mod+d exec --no-startup-id  $HOME/.rofi.sh
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -51,6 +51,11 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+F2 exec palemoon
 bindsym $mod+F3 exec pcmanfm
+# Configuration
+bindsym $mod+F9  --release exec --no-startup-id "autorandr common;      exec notify-send 'Autorandr common'; true"
+bindsym $mod+F10 --release exec --no-startup-id "autorandr horizontal;  exec notify-send 'Autorandr horizontal'; true"
+bindsym $mod+F11 --release exec --no-startup-id "autorandr vertical;    exec notify-send 'Autorandr vertical'; true"
+bindsym $mod+F12 --release exec --no-startup-id "autorandr -c;          exec notify-send 'Autorandr change'; true"
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec gksu pcmanfm
 bindsym $mod+F5 exec terminal -e 'mocp'
@@ -66,7 +71,7 @@ bindsym $mod+Shift+Ctrl+x --release exec --no-startup-id xkill
 focus_follows_mouse no
 
 # disble jump to workspace on focus for
-no_focus [class="jetbrains-idea"]
+# no_focus [class="jetbrains-idea"]
 
 # change focus
 bindsym $mod+j focus left
@@ -171,10 +176,11 @@ bindsym $mod+Shift+bracketright move workspace to output right,  move workspace 
   set $base0F #fcc09e
 
 #  Widow Colours           border  backgr. text    indic.
-  client.focused          $base01 $base01 $base07 $base0F
-  client.focused_inactive $base02 $base02 $base03 $base0F
-  client.unfocused        $base02 $base02 $base03 $base0F
-  client.urgent           $base02 $base08 $base00 $base0F
+#                          border  backgr. text    indicator child_border
+  client.focused          $base01 $base01 $base07 $base0F $base01
+  client.focused_inactive $base02 $base02 $base03 $base0F $base02
+  client.unfocused        $base02 $base02 $base03 $base0F $base02
+  client.urgent           $base02 $base08 $base00 $base0F $base08
 
 
 
@@ -209,7 +215,6 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Open applications on specific workspaces
-assign [class="Evolution"] $ws7
 assign [class="chromium"] $ws1
 assign [class="Chromium"] $ws1
 assign [class="Spotify"] $ws8
@@ -240,7 +245,7 @@ for_window [title="File Transfer*"] floating enable
 for_window [class="Galculator"] floating enable border pixel 1
 for_window [class="GParted"] floating enable border normal
 for_window [title="i3_help"] floating enable sticky enable border normal
-for_window [class="Lightdm-settings"] floating enable	
+for_window [class="Lightdm-settings"] floating enable
 for_window [class="Lxappearance"] floating enable sticky enable border normal
 for_window [class="Manjaro-hello"] floating enable
 for_window [class="Manjaro Settings Manager"] floating enable border normal
@@ -366,7 +371,7 @@ gaps outer -4
 # Smart gaps (gaps used if only more than one container on the workspace)
 smart_gaps on
 
-# Smart borders (draw borders around container only if it is not the only container on this workspace) 
+# Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders on
 
@@ -383,24 +388,24 @@ mode "$mode_gaps" {
         bindsym Escape mode "default"
 }
 mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
+        bindsym plus  gaps inner current plus 1
+        bindsym minus gaps inner current minus 1
         bindsym 0     gaps inner current set 0
 
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+plus  gaps inner all plus 1
+        bindsym Shift+minus gaps inner all minus 1
         bindsym Shift+0     gaps inner all set 0
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
+        bindsym plus  gaps outer current plus 1
+        bindsym minus gaps outer current minus 1
         bindsym 0     gaps outer current set 0
 
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+plus  gaps outer all plus 1
+        bindsym Shift+minus gaps outer all minus 1
         bindsym Shift+0     gaps outer all set 0
 
         bindsym Return mode "default"

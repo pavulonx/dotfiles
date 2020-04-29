@@ -103,9 +103,9 @@ tray-offset-x = 2
 tray-scale = 01.00
 
 modules-left = i3 xwindow
-modules-center = 
+modules-center =
 ;date
-modules-right = music vpn wlan powermenu backlight filesystem temperature cpu memory battery volume date 
+modules-right = music vpn wlan backlight filesystem temperature cpu memory battery volume date
 ;redshift
 
 underline-size = 1
@@ -116,7 +116,7 @@ underline-size = 1
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:80:...%
+label = %title:0:180:...%
 
 [module/i3]
 type = internal/i3
@@ -155,6 +155,23 @@ label-visible-padding = 1
 ;format-padding = 2
 ;click-left = urxvt -e sudo pacman -Syu
 
+[module/temperature]
+type = internal/temperature
+format = <ramp> <label>
+label = +%temperature-c%
+interval = 1
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon7/temp1_input
+warn-temperature = 80
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+ramp-5 = 
+ramp-6 = 
+ramp-7 = 
+ramp-7-foreground = #fba922
+
 [module/backlight]
 type = internal/backlight
 card = intel_backlight
@@ -165,11 +182,13 @@ label =   %percentage%
 [module/music]
 type = custom/script
 exec = $HOME/.config/polybar/scripts/mediaplayer.sh
-label =   %output:0:40:...%
+label = %output:0:40:...%
 format-padding = 2
 interval = 2
 exec-if = pgrep -x spotify || pgrep -x deadbeef
-
+click-left = playerctl previous
+click-right = playerctl next
+click-middle = playerctl play-pause
 
 [module/volume]
 type = internal/alsa
@@ -183,14 +202,6 @@ ramp-volume-2 = 
 format-volume-padding = 2
 format-volume-background = ${colors.tgreen}
 mapping = true
-
-
-[module/temperature]
-type = custom/script
-exec = $HOME/.config/polybar/scripts/temperature.sh
-interval = 10
-label =   %output%
-format-padding = 2
 
 
 [module/date]
@@ -270,7 +281,7 @@ interval = 3.0
 
 format-connected-padding = 1
 format-disconnected-padding = 1
-format-connected = <label-connected> 
+format-connected = <label-connected>
 label-connected =%downspeed:9%  %essid:0:8:…%
 label-disconnected = 
 label-disconnected-foreground = ${colors.lgrey}
@@ -287,7 +298,7 @@ format-prefix-foreground = #5b
 
 [module/battery]
 type = internal/battery
-battery = BAT0
+battery = BAT1
 adapter = AC
 full-at = 99
 
