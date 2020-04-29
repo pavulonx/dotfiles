@@ -3,11 +3,7 @@
 # enabling screenlock by xfce4-power-manger for manjaro-i3 (without xfce4-session)
 
 if [ ! -f "/usr/bin/xflock4" ]; then
-  if [ "$(pidof xautolock)" ]; then
-    xautolock -locknow
-  else
-    i3lock -c 000000
-  fi
+  blurlock
 else
   /usr/bin/xflock4
 fi

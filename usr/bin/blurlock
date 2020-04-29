@@ -1,8 +1,12 @@
 #!/bin/bash
 # /usr/bin/blurlock
-logger -s "Blurlock is deprecated, use 'xautolock -locknow'"
-# lock the screen
-i3lock 
+
+if [ "$(command -v betterlockscreen)" ]; then
+	betterlockscreen -l
+else
+	i3lock -c000000
+fi
+
 # sleep 1 adds a small delay to prevent possible race conditions with suspend
 sleep 1
 

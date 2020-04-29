@@ -3,14 +3,21 @@
 
 # define locker
 params=""
-[[ $(ps x | grep xautolock | grep -v "grep") ]] && locker="xautolock" && params="-locknow" || locker="i3lock"
+if [ "$(command -v betterlockscreen)" ]; then
+	locker="betterlockscreen"
+	params="-l"
+else
+	locker="i3lock"
+	params="-c000000"
+fi
+
 
 # with openrc use loginctl
-[[ $(cat /proc/1/comm) == "systemd" ]] && logind=systemctl || logind=loginctl
+[ "$(cat /proc/1/comm)" = "systemd" ] && logind=systemctl || logind=loginctl
 
 case "$1" in
     lock)
-        $locker $params 
+        $locker $params
         ;;
     logout)
         i3-msg exit

@@ -9,8 +9,6 @@ fi
 
 export ZSH_THEME="agnosterzak"
 
-#source ~/.powerline.conf.zsh
-
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
@@ -37,7 +35,6 @@ plugins=(
   git
   docker
   docker-compose
-  thefuck 
   archlinux
 )
 
@@ -45,7 +42,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export LANG=en_US.UTF-8
-export PATH=$HOME/.bin:/usr/local/bin:$PATH
+export PATH=$HOME/.bin:/usr/local/bin:$PATH:$HOME/.yarn/bin
 
 export VISUAL='vim'
 export EDITOR="$VISUAL"
@@ -82,6 +79,4 @@ ssh-add "$SSH_KEY_PATH" 2> /dev/null
 # Plugins
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-eval $(thefuck --alias)
 
-cat ~/TODO
