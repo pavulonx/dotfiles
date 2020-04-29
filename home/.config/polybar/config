@@ -105,7 +105,6 @@ modules-left = i3 xwindow
 modules-center =
 ;date
 modules-right = music vpn wlan backlight filesystem temperature cpu memory battery volume date
-;redshift
 
 underline-size = 1
 
@@ -325,9 +324,3 @@ animation-charging-framerate = 750
 format-background = ${colors.tblue}
 
 ; vim:ft=dosini
-
-[module/redshift]
-type = custom/script
-exec = ~/.config/polybar/scripts/redshift.sh
-click-left = '~/.config/polybar/scripts/redshift.sh --toggle'
-interval = 5
