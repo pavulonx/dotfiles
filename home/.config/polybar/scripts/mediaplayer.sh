@@ -1,17 +1,14 @@
 #!/bin/sh
 
-player_info() {
-    playerctl metadata --format '{{artist}} - {{title}}' -p "$1" | sed 's/ / /g'
-}
+player_metadata=$(playerctl metadata -af "{{status}}:{{artist}} - {{title}}" | grep "Playing\|Paused" | sort -r | head -n 1)
+player_status=$(echo "$player_metadata" | cut -d ":" -f1)
+player_info=$(echo "$player_metadata"  | cut -d ":" -f2-)
 
-# todo: fetch all info here
-player_status=$(playerctl metadata -af "{{status}}:{{playerName}}" | grep "Playing\|Paused" | sort -r | head -n 1)
-active_player=$(playerctl metadata -af "{{status}}:{{playerName}}" | grep "Playing\|Paused" | sort -r | head -n 1 | cut -d ":" -f 2)
-
-if $(echo "$player_status" | grep -q "Playing"); then
-    echo "   $(player_info "$active_player")"
-elif $(echo "$player_status" | grep -q  "Paused"); then
-    echo "   $(player_info "$active_player")"
+if [ "$player_status" = "Playing" ]; then
+    echo "   $player_info"
+elif [ "$player_status" = "Paused" ]; then
+    echo "   $player_info"
 else
     echo ""
 fi
+
