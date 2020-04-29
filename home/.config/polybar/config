@@ -95,7 +95,6 @@ font-5 = DejaVuSansMono Nerd Font:size=10;0
 tray-position = right
 tray-padding = 4
 tray-background = ${colors.background}
-tray-transparent = false
 tray-detached = false
 ;tray-maxsize = 16
 tray-offset-x = 2
